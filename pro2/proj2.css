@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?familyRoboto&display=swap");
+/* /reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* \\Utility Classes */
+.nowrap{
+    white-space: nowrap;
+}
+/* ggeneral style */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font: 1.5rem "Roboto", sans-serif;
+    min-height: 100vh;
+    background-color: #475569;
+    background-image: radial-gradient(whitesmoke,#475569);
+    display: flex;
+    flex-direction: column;
+}
+header,footer{
+position: sticky;
+background-color: #1e293b;
+color: antiquewhite;
+text-align: center;
+z-index: 1;
+}
+header{
+    top: 0;
+}
+nav{
+    background-color: aliceblue;
+    padding: 0.5rem;
+    border-bottom: 2px solid black;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+nav a,nav:visited{
+    color: #1e293b;
+}
+nav a:hover,nav a:focus{
+    color: cadetblue;
+}
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+footer{
+    bottom: 0;
+}
+/* \\profile card */
+.card{
+    scroll-margin-top: 8rem;
+    width: min(100%,350px);
+    background-color: #cbd5e1;
+    border: solid black 2px;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card:target{
+    border: 2px solid springgreen;
+    background-color: rgba(255, 228, 196, 0.74);
+}
+.card figure{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.card img{
+    border: 5px double #333;
+    border-radius: 50%;
+}
+.card figcaption{
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+.card figcaption::before{
+    content: '☣️';
+    display: block;
+    /* above line for specific line */
+}
+/* .card p{
+    position: relative;
+}
+.card p::before{
+    position: absolute;
+    content: open-quote;
+    font-size: 2em;
+    top: -0.25em;
+    right: -0.5em;
+}
+.card p::after{
+    position: absolute;
+    content: close-quote;
+    font-size: 2em;
+    top: -0.25em;
+    right: -0.5em;
+}
+ */
+
+
+/* \\Small */
+/* ||Mobile device landscape|| */
+@media screen and (min-width:768px) {
+    main{
+justify-content: center;
+flex-flow: row wrap;
+padding: 1rem;
+    }
+    .card{
+        width: min(100%,400px);
+    }
+    .card:last-child{
+        order: -1;
+    }
+    nav{
+        display: none;
+    }
+    .card{
+        width: min(100%,325px);
+    }
+    .card figure{
+        flex-flow: column-reverse;
+    }
+    .card figcaption{
+        margin: 0.1em;
+    }
+    .card p{
+        margin-top: 1em;
+    }
+}
+/* ||variables chage similar color/any other from many positions */
+:root{
+    /* colr variable of name BGCOLOR
+    use "var(--BGCOLOR)" */
+    --BGCOLOR: #333;
+    /* if you want to change same color from multiple positions change variable color */
+    /* we can make many types of variables according to need for multiple use of single variable */
+}
